@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Position lab</title>
+    <style>
+        html,body{
+          /*display: flex;
+            justify-content: center*/
+        }
+        .container {
+            width: 800px;
+            height: 600px;
+            background-color: aquamarine;
+            padding-bottom:3000px;
+        }
+        .box{
+            position: absolute;
+            background-color: chartreuse;
+            width: 100px;
+            height: 100px;
+            top: 0px;
+            left: 350px;
+
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container"></div>
+        <div class="box" style="z-index: 3"></div>
+        <div class="box" style="background-color: cornsilk; top: 20px; left: 380px; z-index: 2"></div>
+        <div class="box" style="background-color: darkblue; top:40px; left: 400px;"></div>
+
+</body>
+</html>

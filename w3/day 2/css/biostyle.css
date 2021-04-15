@@ -1,0 +1,7 @@
+body,html{
+    display: flex;
+    justify-content: center;
+    background-color: blueviolet;
+
+}
+#main-container{}

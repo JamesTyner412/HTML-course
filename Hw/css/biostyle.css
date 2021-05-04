@@ -4,4 +4,19 @@ body,html{
     background-color: blueviolet;
 
 }
-#main-container{}
+#main-container{
+    width:1000px;
+    border: 1px solid black;
+}
+
+header{
+    text-align: center;
+    background-color: purple;
+    height:100px;
+    line-height: 100px;
+
+}
+
+h1{
+    margin: 0;
+}

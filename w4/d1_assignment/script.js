@@ -37,6 +37,7 @@ ctx.closePath()
 ctx.stroke()
 ctx.fill()
 
+
 ctx.fillStyle = "#ffff00"
 ctx.strokeStyle = "rgb(32,32,32)"
 ctx.lineWidth ="5"

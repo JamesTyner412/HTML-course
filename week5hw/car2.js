@@ -6,8 +6,8 @@ var timer = requestAnimationFrame(main)
 var xpos = 20
 var xpos2 = 20
 
-var speed1 = Math.random() * (1 - .5) + .5;
-var speed2 = Math.random() * (1 - .5) + .5;
+var speed1 = 1// Math.random() * (1 - .5) + .5;
+var speed2 = 1// Math.random() * (1 - .5) + .5;
 
 var start = 58
 var finish = 956
@@ -65,12 +65,19 @@ function main() {
 
         }
         else {
-            if (gameOver == false && fuel > 0 && fuel2 > 0 && sec <= 0) {
+            if (gameOver == false) {
                 //update values
-                xpos+= speed1;
-                xpos2+= speed2;
-                fuel--;
-                fuel2--;
+                
+                if(fuel>0){
+                    xpos+= speed1;
+                    fuel--;   
+                }
+                if(fuel2 > 0){
+                    xpos2+= speed2;
+                    fuel2--;  
+                }
+                
+                
             }
 
 
@@ -128,12 +135,12 @@ function drawFinishLine() {
     ctx.fillRect(finish, 90, 10, 500)
 }
 function drawCar() {
-    ctx.drawImage(roxas, xpos2, canvas.height / 2 - 160, 50, 100)
+    ctx.drawImage(roxas, xpos, canvas.height / 2 - 160, 50, 100)
 
 }
 
 function drawCar2() {
-    ctx.drawImage(sora, xpos, canvas.height / 1.5 - 130, 50, 100)
+    ctx.drawImage(sora, xpos2, canvas.height / 1.5 - 130, 50, 100)
 
 }
 
@@ -190,10 +197,13 @@ function runStartTimer() {
 }
 
 function drawStartTimer() {
-    ctx.fillStyle = "black"
+    ctx.fillStyle = "skyblue"
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = "3px"
     ctx.font = "25px Arial"
     ctx.textAlign = "center "
     ctx.fillText(sec, canvas.width / 2, canvas.height / 2)
+    ctx.strokeText(sec, canvas.width / 2, canvas.height / 2)
 
 }
 

@@ -1,0 +1,25 @@
+html,body{
+    display: flex;
+    justify-content: center;
+}
+
+#container{
+    box-sizing: 1000px, 800px;
+    border:1px solid black;
+    padding: 10px;
+}
+canvas{
+    border: 1px solid black;
+    background-image: url(image/animerps.jpg);
+    background-position: center;
+}
+
+#btn{
+    display: flex;
+    justify-content: center;
+}
+button{
+background-color:cyan;
+border-radius: 10px;
+    
+}

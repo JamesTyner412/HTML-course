@@ -10,7 +10,7 @@ html,body{
 }
 canvas{
     border: 1px solid black;
-    background-image: url(image/animerps.jpg);
+    background-image: url(Image/animerps.jpg);
     background-position: center;
 }
 

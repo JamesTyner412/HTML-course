@@ -17,14 +17,14 @@ var gameOver = true
 
 //variable for image sprite 
 var roxas = new Image()
-roxas.src = 'Image/roxas.png'
+roxas.src = 'image/roxas.png'
 
 roxas.onload = function () {
     main();
 }
 
 var sora = new Image()
-sora.src = 'Image/sora.png'
+sora.src = 'image/sora.png'
 
 sora.onload = function () {
     main();

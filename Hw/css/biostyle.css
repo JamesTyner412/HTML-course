@@ -1,7 +1,7 @@
 body,html{
     display: flex;
     justify-content: center;
-    background-color: blueviolet;
+    background-color: blue;
 
 }
 #main-container{
@@ -11,7 +11,7 @@ body,html{
 
 header{
     text-align: center;
-    background-color: purple;
+    background-color: skyblue;
     height:100px;
     line-height: 100px;
 

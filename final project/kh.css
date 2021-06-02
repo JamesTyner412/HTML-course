@@ -2,14 +2,43 @@ html,body{
     display: flex;
     justify-content: center;
     background-color: black;
+    background-image: url(images/Background.jpg);
+    background-position: center;
+    background-size: cover;
+
     
 }
+#container{
+    background-color: black;
+    border: 5px solid white;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+
+header{
+    display: flex;
+    justify-content: center;
+    border: black;
+    font-family: 'Courgette';
+    color: darkgray;
+}
+
+
+
 
 canvas{
-    border: 5px solid red;
+    border: 5px solid white;
     background-image: url(images/lost.gif);
     background-position: center;
     background-size: 1200px, 1000px;
     background-repeat: repeat;
     
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    font-family: 'Courgette';
+    color: darkgray;
 }

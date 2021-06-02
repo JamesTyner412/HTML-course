@@ -61,6 +61,7 @@ soraheart.onload = function () {
     main()
 }
 
+
 function randomRange(high, low) {
     return Math.random() * (high - low) + low
 }
@@ -256,7 +257,7 @@ gameStates[0] = function () {
 
     ctx.save()
     ctx.drawImage(kh2, -100, 0, 1200, 800)
-    ctx.font = "60px Arial"
+    ctx.font = "60px Courgette"
     ctx.fillStyle = "gray"
     ctx.strokeStyle = "black"
     ctx.lineWidth = 3
@@ -266,7 +267,7 @@ gameStates[0] = function () {
     ctx.fillStyle = "white"
     ctx.strokeStyle = "black"
     ctx.lineWidth = 2
-    ctx.font = "30px Arial"
+    ctx.font = "30px Courgette"
     ctx.textAlign = "center"
     ctx.fillText("Press Space to Get moving", canvas.width / 2, canvas.height / 2 +90)    
     ctx.strokeText("Press Space to Get moving", canvas.width / 2, canvas.height / 2 +90)    
@@ -277,7 +278,7 @@ gameStates[1] = function () {
 
     ctx.save()
     ctx.drawImage(soraheart, 0, 0, canvas.width, canvas.height)
-    ctx.font = "15px Arial"
+    ctx.font = "15px Courgette"
     ctx.fillStyle = "red"
     ctx.fillText("score: " + score.toString(), canvas.width - 150, 30)
     ctx.restore()
@@ -372,27 +373,26 @@ gameStates[2] = function () {
         highScore = score
         ctx.save()
        // ctx.drawImage(lost, 0, 0, canvas.width, canvas.height)
-        ctx.font = "30px Times New Roman"
+        ctx.font = "30px Courgette"
         ctx.fillStyle = "red"
         ctx.textAlign = "center"
-        ctx.fillText("Game Over, your highscore was: " + score.toString(), canvas.width / 2, canvas.height / 2 - 60)
-        ctx.fillText("your new highscore is: " + highScore.toString(), canvas.width / 2, canvas.height / 2 - 30)
-        ctx.fillText("new High score", canvas.width / 2, canvas.height / 2)
-        ctx.font = "15px Arial"
+        ctx.fillText("Game Over, Your Highscore was: " + score.toString(), canvas.width / 2, canvas.height / 2 + 180)
+        ctx.fillText("Your New Highscore Is: " + highScore.toString(), canvas.width / 2, canvas.height / 2 +210)
+        ctx.fillText("New High Score", canvas.width / 2, canvas.height / 2 + 240)
+        ctx.font = "15px Courgette"
         ctx.textAlign = "center"
-        ctx.fillText("Press Space to redeem yourself", canvas.width / 2, canvas.height / 2 + 20)
+        ctx.fillText("Press Space to Redeem Yourself", canvas.width / 2, canvas.height / 2 + 260)
         ctx.restore()
     } else {
         ctx.save()
-        ctx.font = "30px Arial"
+        ctx.font = "30px Courgette"
         ctx.fillStyle = "red"
         ctx.textAlign = "center"
-        ctx.fillText("Game Over, Your Highscore: " + score.toString(), canvas.width / 2, canvas.height / 2 - 60)
-        ctx.fillText("Your New Highscore is: " + highScore.toString(), canvas.width / 2, canvas.height / 2 - 30)
-        ctx.fillText("New High Score", canvas.width / 2, canvas.height / 2)
-        ctx.font = "15px Arial"
+        ctx.fillText("Game Over, Your Highscore: " + score.toString(), canvas.width / 2, canvas.height / 2 - 180)
+        ctx.fillText("Your New Highscore is: " + highScore.toString(), canvas.width / 2, canvas.height / 2 - 210)
+        ctx.font = "15px Courgette"
         ctx.textAlign = "center"
-        ctx.fillText("Press Space to redeem yourself", canvas.width / 2, canvas.height / 2 + 20)
+        ctx.fillText("Press Space to redeem yourself", canvas.width / 2, canvas.height / 2 + 280)
         ctx.restore()
 
     }

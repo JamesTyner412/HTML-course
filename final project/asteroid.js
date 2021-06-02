@@ -99,7 +99,7 @@ function PowerUp() {
     this.x = randomRange(canvas.width - this.radius, this.radius) - canvas.width
     this.y = randomRange(canvas.height - this.radius, this.radius) - canvas.height
     this.vx = randomRange(-10, -5)
-    this.color = "pink"
+    this.color = "rgba(255,255,255,0)"
 
     this.drawPowerUp = function () {
         ctx.save()
@@ -387,9 +387,9 @@ gameStates[2] = function () {
         ctx.font = "30px Arial"
         ctx.fillStyle = "red"
         ctx.textAlign = "center"
-        ctx.fillText("Game Over, your highscore: " + score.toString(), canvas.width / 2, canvas.height / 2 - 60)
-        ctx.fillText("your new highscore is: " + highScore.toString(), canvas.width / 2, canvas.height / 2 - 30)
-        ctx.fillText("new High score", canvas.width / 2, canvas.height / 2)
+        ctx.fillText("Game Over, Your Highscore: " + score.toString(), canvas.width / 2, canvas.height / 2 - 60)
+        ctx.fillText("Your New Highscore is: " + highScore.toString(), canvas.width / 2, canvas.height / 2 - 30)
+        ctx.fillText("New High Score", canvas.width / 2, canvas.height / 2)
         ctx.font = "15px Arial"
         ctx.textAlign = "center"
         ctx.fillText("Press Space to redeem yourself", canvas.width / 2, canvas.height / 2 + 20)

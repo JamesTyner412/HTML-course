@@ -8,8 +8,8 @@ var timer = setInterval(animate, interval);
 /*------------Use this if you want to implement States---------------*/
 var startButton = new GameObject();
 startButton.img.src=`images/start.png`;
-startButton.x=(600)
-startButton.y=(470)
+startButton.x=(700)
+startButton.y=(400)
 
 var menuBackground = new GameObject();
 menuBackground.img.src=`images/menu.png`;
@@ -184,7 +184,7 @@ gameStates[`game`] = function()
 			bullets[currentBullet].vx=5*wiz.dir;
 			bullets[currentBullet].world = level;
 			bullets[currentBullet].x = wiz.x - level.x +20;
-			bullets[currentBullet].y = wiz.y - level.y +50;
+			bullets[currentBullet].y = wiz.y - level.y +30;
 			sounds.play(`splode` ,1)
 	
 			

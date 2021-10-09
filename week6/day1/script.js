@@ -80,7 +80,7 @@ function Gameobject() {
 //create an arrey of particles
 var particles = []
 
-var numParticles = 1000
+var numParticles = 10
 var timer = requestAnimationFrame(main)
 
 //four loop

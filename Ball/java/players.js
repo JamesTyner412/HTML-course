@@ -9,7 +9,7 @@ function Ball() {
 
 	//player's velocity or speed on each axis
 	this.vx = 3;
-	this.vy = 0;
+	this.vy = 3;
 
 	//player's color
 	this.color = "skyblue"

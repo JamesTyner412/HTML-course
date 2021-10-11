@@ -10,10 +10,16 @@ function animate() {
     context.clearRect(0, 0, canvas.width, canvas.height)
 
     ball.x += ball.vx
+    ball.y += ball.vy
+
 
     if(ball.x > canvas.width - ball.radius || ball.x -ball.radius < 0)
 	{
 		ball.vx = -ball.vx;	
+	}
+    if(ball.y > canvas.height - ball.radius || ball.y -ball.radius < 0)
+	{
+		ball.vy = -ball.vy;	
 	}
     ball.draw()
 }

@@ -9,6 +9,11 @@ timer = setInterval(animate, interval)
 function animate() {
     context.clearRect(0, 0, canvas.width, canvas.height)
 
-    ball.x += 1
+    ball.x += ball.vx
+
+    if(ball.x > canvas.width - ball.radius || ball.x -ball.radius < 0)
+	{
+		ball.vx = -ball.vx;	
+	}
     ball.draw()
 }

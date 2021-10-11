@@ -8,7 +8,7 @@ function Ball() {
 	this.height = 100;
 
 	//player's velocity or speed on each axis
-	this.vx = 1;
+	this.vx = 3;
 	this.vy = 0;
 
 	//player's color

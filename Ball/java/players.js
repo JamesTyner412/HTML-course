@@ -27,6 +27,12 @@ function Ball() {
 		context.fill()
 		context.restore();
 
+		ctx.save()
+		ctx.font = "15px Arial"
+		ctx.fillStyle = "black"
+		ctx.fillText("score: " + scorer.toString(), canvas.width - 150, 30)
+		ctx.restore()
+
 	}
 
 	//This changes the player's position

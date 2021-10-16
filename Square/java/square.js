@@ -12,7 +12,7 @@ timer = setInterval(animate, interval);
 paddle = new GameObject();
 paddle.x = 10
 paddle.y = canvas.height/2
-paddle.w = 5
+paddle.w = 14
 paddle.h = 150
 
 function animate() {

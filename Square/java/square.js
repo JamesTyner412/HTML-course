@@ -31,6 +31,17 @@ function animate() {
 		paddle.y += -2;
 	}
 
+    //paddle screen bounderies
+    if(paddle.y + paddle.h > canvas.height + paddle.h/2)
+    {
+        paddle.y = canvas.height - paddle.h /2
+    }
+
+    if( paddle.y < 0 + paddle.h/2 )
+    {
+        paddle.y = 0 + paddle.h/2
+    }
+    
     paddle.drawRect();
 }
 

@@ -19,13 +19,13 @@ function animate() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     	//Move the Player to the right
-	if(w)
+	if(s)
 	{
 		//console.log("Moving Right");
 		paddle.y += 2;
 	}
 	
-	if(s)
+	if(w)
 	{
 		//console.log("Moving Right");
 		paddle.y += -2;

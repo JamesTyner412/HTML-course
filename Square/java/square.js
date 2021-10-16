@@ -18,7 +18,18 @@ paddle.h = 150
 function animate() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    
+    	//Move the Player to the right
+	if(w)
+	{
+		//console.log("Moving Right");
+		paddle.y += 2;
+	}
+	
+	if(s)
+	{
+		//console.log("Moving Right");
+		paddle.y += -2;
+	}
 
     paddle.drawRect();
 }

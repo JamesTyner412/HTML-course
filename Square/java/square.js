@@ -47,15 +47,21 @@ function animate() {
     ball.y += ball.vy
 
 
-    if(ball.x > canvas.width - ball.radius) //ball.x -ball.radius < 0)
+    if(ball.x < -ball.radius) //ball.x -ball.radius < 0)
 	{
-		ball.vx = -ball.vx;	
+		ball.x = canvas.width/2 
+        ball.y = canvas.height/2
+
+        
        
     
         
        
     }
-   
+   if(ball.x > canvas.width - ball.radius)
+   {
+       ball.vx *= -1
+   }
 
 
     //if(ball.y > canvas.height - ball.radius || ball.y -ball.radius < 0)

@@ -28,10 +28,11 @@ function GameObject(x,y,w,h,color)
 		this.color = color;
 	
 	//player's velocity or speed on each axis
-	this.vx = 0;
-	this.vy = 0;
+	this.vx = 4;
+	this.vy = 4;
 	
-	
+	//Players radius
+	this.radius = 30
 	
 	//This draws the player to the screen
 	this.drawRect = function()
@@ -44,20 +45,18 @@ function GameObject(x,y,w,h,color)
 		
 	}	
 	
-	this.drawCircle = function()
-	{
-		context.save();
-			context.fillStyle = this.color;
-			context.beginPath();
-			context.translate(this.x, this.y);
-			context.arc(0, 0, this.width/2, 0, 360 *Math.PI/180, true);
-			context.arc(0, 0, this.width/2, 0, 360 *Math.PI/180, true);
-			context.closePath();
-			context.fill();
-		context.restore();
-		
-	}	
 	
+	//This draws the player to the screen
+	this.drawCircle = function () {
+		context.save();
+		context.beginPath()
+		context.fillStyle = this.color 
+		context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+		context.closePath()
+		context.fill()
+		context.restore();
+	}
+
 	//This changes the player's position
 	this.move = function()
 	{

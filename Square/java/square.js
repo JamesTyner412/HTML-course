@@ -47,27 +47,73 @@ function animate() {
     ball.y += ball.vy
 
 
-    if(ball.x > canvas.width - ball.radius || ball.x -ball.radius < 0)
+    if(ball.x > canvas.width - ball.radius) //ball.x -ball.radius < 0)
 	{
 		ball.vx = -ball.vx;	
        
     
-        scorer --
-        ball.color = "violet"
+        
+       
     }
    
 
 
-    if(ball.y > canvas.height - ball.radius || ball.y -ball.radius < 0)
+    //if(ball.y > canvas.height - ball.radius || ball.y -ball.radius < 0)
+	//{
+	//	ball.vy = -ball.vy;	
+        
+        
+        
+        
+       
+   // }
+   
+    //Check Collisions
+	
+	//Demonstrates Accuracy of Bounding Box Collision
+	if(ball.hitTestObject(paddle))
 	{
-		ball.vy = -ball.vy;	
-        
-        
-        
-        scorer ++
-        ball.color = "blue"
-    }
-   
+		//change color
+        ball.vx = -ball.vx;	
+       
+	}
+
+    if(ball.hitTestObject(paddle))
+	{
+		//change color
+		ball.color = "yellow";
+	}
+	else
+	{
+		ball.color = "#00ff00";
+	}
+	
+	//Shows Bounding Boxes
+	if(ball.hitTestObject(paddle))
+	{
+		//draw bounding boxes
+		context.strokeRect(ball.x- ball.width/2, ball.y - ball.height/2, ball.width, ball.height)
+		context.strokeRect(paddle.x- paddle.width/2, paddle.y - paddle.height/2, paddle.width, paddle.height)
+	}
+	
+	//Demonstrates how often collisions take place
+	if(ball.hitTestObject(paddle))
+	{
+		console.log("colliding");
+	}
+	
+	//Impede movement
+	if(ball.hitTestObject(paddle))
+	{
+		paddle.x = prevX;
+		console.log("colliding");
+	}
+	else
+	{
+		prevX = paddle.x;
+	}
+
+
 
     ball.drawCircle()
 

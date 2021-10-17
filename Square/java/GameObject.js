@@ -29,7 +29,7 @@ function GameObject(x,y,w,h,color)
 	
 	//player's velocity or speed on each axis
 	this.vx = 4;
-	this.vy = 4;
+	this.vy = 0;
 	
 	//Players radius
 	this.radius = 30

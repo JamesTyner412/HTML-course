@@ -10,11 +10,16 @@ context = canvas.getContext("2d");
 interval = 1000 / 60
 timer = setInterval(animate, interval);
 ball = new GameObject();
+ball.width = 50
+ball.height = 50
+ball.vx = -5
+ball.vy = 0
 paddle = new GameObject();
-paddle.x = 10
+paddle.x = 5
 paddle.y = canvas.height / 2
-paddle.w = 14
-paddle.h = 150
+paddle.width = 14
+paddle.height = 150
+
 
 function animate() {
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -22,28 +27,30 @@ function animate() {
     //Move the Player to the right
     if (s) {
         //console.log("Moving Right");
-        paddle.y += 2;
+        paddle.y += 15;
     }
 
     if (w) {
         //console.log("Moving Right");
-        paddle.y += -2;
+        paddle.y += -15;
     }
 
     //paddle screen bounderies
-    if (paddle.y + paddle.h > canvas.height + paddle.h / 2) {
-        paddle.y = canvas.height - paddle.h / 2
+    if (paddle.y + paddle.height > canvas.height + paddle.height / 2) 
+    {
+        paddle.y = canvas.height - paddle.height / 2
     }
 
-    if (paddle.y < 0 + paddle.h / 2) {
-        paddle.y = 0 + paddle.h / 2
+    if (paddle.y < 0 + paddle.height / 2) 
+    {
+        paddle.y = 0 + paddle.height / 2
     }
 
     ball.x += ball.vx
     ball.y += ball.vy
 
 
-    if (ball.x < -ball.radius) //ball.x -ball.radius < 0)
+    if (ball.x < 0 -ball.width / 2) //ball.x -ball.radius < 0)
     {
         ball.x = canvas.width / 2
         ball.y = canvas.height / 2
@@ -54,18 +61,24 @@ function animate() {
 
 
     }
-    if (ball.x > canvas.width - ball.radius) {
-        ball.vx *= -1
+    if (ball.x > canvas.width - ball.width/2)
+    {
+        ball.x = canvas.width - ball.width/2
+        ball.vx = -ball.vx
     }
 
 
-    if(ball.y > canvas.height - ball.radius || ball.y -ball.radius < 0)
+    if (ball.y > canvas.height - ball.width/2) 
     {
-    	ball.vy = -ball.vy;	
+        ball.y = canvas.height - ball.width/2
+        ball.vy = -ball.vy;
 
 
-
-
+    }
+    if (ball.y < 0 + ball.width / 2) 
+    {
+        ball.y = 0 + ball.width / 2
+        ball.vy = -ball.vy
 
     }
 
@@ -75,50 +88,20 @@ function animate() {
     if (ball.hitTestObject(paddle)) {
         //change color
 
-
+        ball.x = paddle.x + paddle.width / 2 + ball.width / 2
 
         //ball hits top
-        if (ball.y < paddle.y - paddle.height / 6)//one sixth of the paddle's height)
+        ball.vx = -ball.vx//positive speed;
+
+        if (ball.y < paddle.y - paddle.y / 6)//one sixth of the paddle's height)
         {
-            ball.vx = ball.force //positive speed;
+
             ball.vy = -ball.force //negative speed;
         }
-        else if (ball.y > paddle.y + paddle.height / 6) {
+        else if (ball.y > paddle.y + paddle.height / 6)
+        {
             ball.vy = ball.force //positive speed;
-            ball.vx = -ball.force //negative speed;
         }
-        else {
-            ball.vx = -ball.vx;
-        }
-    }
-
-    if (ball.hitTestObject(paddle)) {
-        //change color
-        ball.color = "yellow";
-    }
-    else {
-        ball.color = "#00ff00";
-    }
-
-    //Shows Bounding Boxes
-    if (ball.hitTestObject(paddle)) {
-        //draw bounding boxes
-        context.strokeRect(ball.x - ball.width / 2, ball.y - ball.height / 2, ball.width, ball.height)
-        context.strokeRect(paddle.x - paddle.width / 2, paddle.y - paddle.height / 2, paddle.width, paddle.height)
-    }
-
-    //Demonstrates how often collisions take place
-    if (ball.hitTestObject(paddle)) {
-        console.log("colliding");
-    }
-
-    //Impede movement
-    if (ball.hitTestObject(paddle)) {
-        paddle.x = prevX;
-        console.log("colliding");
-    }
-    else {
-        prevX = paddle.x;
     }
 
 

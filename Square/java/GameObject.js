@@ -28,13 +28,13 @@ function GameObject(x,y,w,h,color)
 		this.color = color;
 	
 	//player's velocity or speed on each axis
-	this.vx = 4;
+	this.vx = 0;
 	this.vy = 0;
-	this.force = 5
+	this.force = 1
 	
 	
 	//Players radius
-	this.radius = 30
+	//this.radius = 30
 	
 	//This draws the player to the screen
 	this.drawRect = function()
@@ -42,7 +42,7 @@ function GameObject(x,y,w,h,color)
 		context.save();
 			context.fillStyle = this.color;
 			context.translate(this.x, this.y);
-			context.fillRect((-this.w/2), (-this.h/2), this.w, this.h);
+			context.fillRect((-this.width/2), (-this.height/2), this.width, this.height);
 		context.restore();
 		
 	}	
@@ -53,7 +53,7 @@ function GameObject(x,y,w,h,color)
 		context.save();
 		context.beginPath()
 		context.fillStyle = this.color 
-		context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+		context.arc(this.x, this.y, this.width/2, 0, 2 * Math.PI)
 		context.closePath()
 		context.fill()
 		context.restore();

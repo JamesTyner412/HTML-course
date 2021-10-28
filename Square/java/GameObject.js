@@ -69,7 +69,6 @@ function GameObject(x, y, w, h, color) {
 		context.fillText("P2:  " +p2S, 750, 50)
 	}
 
-
 	//This changes the player's position
 	this.move = function () {
 		this.x += this.vx;

@@ -8,7 +8,7 @@ var paddle2
 var score 
 var p1S = 0
 var p2S = 0
-
+var net
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
 interval = 1000 / 60
@@ -76,6 +76,15 @@ function animate() {
     ball.x += ball.vx
     ball.y += ball.vy
 
+    context.save();
+    context.strokeStyle = "blue"; //someColor;
+    context.beginPath();
+    context.moveTo(canvas.width /2, 0)                     //center of canvas x, //top of canvas y);
+    context.lineTo(canvas.width/2, canvas.height )                     //center of canvas x, //bottom of canvas y);
+    context.closePath();
+    context.lineWidth = 10                 //some number; 
+    context.stroke();
+    context.restore();
 
     //Demonstrates Accuracy of Bounding Box Collision
     if (ball.hitTestObject(paddle)) {
@@ -123,6 +132,8 @@ function animate() {
     paddle.drawRect();
     paddle2.drawRect();
     score.drawScore();
+
+   
 }
 
 

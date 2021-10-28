@@ -5,10 +5,13 @@ var paddle;
 var interval;
 var ball;
 var paddle2
-var score 
+var score
 var p1S = 0
 var p2S = 0
 var net
+var pokeball
+var pokeball=document.getElementById("pokeball");
+pokeball.src = "images/pokeball.png";
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
 interval = 1000 / 60
@@ -31,7 +34,10 @@ paddle2.height = 150
 score = new GameObject()
 
 
-function animate() {
+
+function animate() 
+{
+   
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     //Move the Player to the right
@@ -56,36 +62,41 @@ function animate() {
 
     pad(paddle)
     pad(paddle2)
-    
-    if(ball.y > canvas.height-ball.width/2)
-    {
-        ball.y = canvas.height - ball.width/2
+
+    if (ball.y > canvas.height - ball.width / 2) {
+        ball.y = canvas.height - ball.width / 2
 
         ball.vy = - ball.vy
     }
 
     //bottom
-    if(ball.y < 0 + ball.width/2)
-    {
-        ball.y = 0  + ball.width/2
+    if (ball.y < 0 + ball.width / 2) {
+        ball.y = 0 + ball.width / 2
 
         ball.vy = - ball.vy
     }
 
 
     ball.x += ball.vx
-    ball.y += ball.vy
+    ball.y += ball.vy               
+
+   
+  
+    
+  
+    
+
 
     context.save();
     context.strokeStyle = "blue"; //someColor;
     context.beginPath();
-    context.moveTo(canvas.width /2, 0)                     //center of canvas x, //top of canvas y);
-    context.lineTo(canvas.width/2, canvas.height )                     //center of canvas x, //bottom of canvas y);
+    context.moveTo(canvas.width / 2, 0)                     //center of canvas x, //top of canvas y);
+    context.lineTo(canvas.width / 2, canvas.height)                     //center of canvas x, //bottom of canvas y);
     context.closePath();
     context.lineWidth = 10                 //some number; 
     context.stroke();
     context.restore();
-
+    
     //Demonstrates Accuracy of Bounding Box Collision
     if (ball.hitTestObject(paddle)) {
         //change color
@@ -127,12 +138,12 @@ function animate() {
 
 
 
-    ball.drawCircle()
-
+    //ball.drawCircle()
+    context.drawImage(pokeball, ball.x -ball.width/2, ball.y -ball.height/2, ball.width, ball.height );
     paddle.drawRect();
     paddle2.drawRect();
     score.drawScore();
-
+  
    
 }
 

@@ -22,7 +22,7 @@ function GameObject(x, y, w, h, color) {
 
 	//player's color
 	if (color == undefined)
-		this.color = "green";
+		this.color = "yellow";
 	else
 		this.color = color;
 

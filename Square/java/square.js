@@ -10,7 +10,7 @@ var p1S = 0
 var p2S = 0
 var net
 var pokeball
-var pokeball=document.getElementById("pokeball");
+var pokeball = document.getElementById("pokeball");
 pokeball.src = "images/pokeball.png";
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
@@ -35,9 +35,8 @@ score = new GameObject()
 
 
 
-function animate() 
-{
-   
+function animate() {
+
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     //Move the Player to the right
@@ -78,13 +77,7 @@ function animate()
 
 
     ball.x += ball.vx
-    ball.y += ball.vy               
-
-   
-  
-    
-  
-    
+    ball.y += ball.vy
 
 
     context.save();
@@ -96,7 +89,7 @@ function animate()
     context.lineWidth = 10                 //some number; 
     context.stroke();
     context.restore();
-    
+
     //Demonstrates Accuracy of Bounding Box Collision
     if (ball.hitTestObject(paddle)) {
         //change color
@@ -139,12 +132,12 @@ function animate()
 
 
     //ball.drawCircle()
-    context.drawImage(pokeball, ball.x -ball.width/2, ball.y -ball.height/2, ball.width, ball.height );
+    context.drawImage(pokeball, ball.x - ball.width / 2, ball.y - ball.height / 2, ball.width, ball.height);
     paddle.drawRect();
     paddle2.drawRect();
     score.drawScore();
-  
-   
+
+
 }
 
 

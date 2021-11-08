@@ -52,6 +52,21 @@ var player;
 		platform5.color = "blue";
 
 
+
+		platform6 = new GameObject;
+		platform6.width = 175;
+		platform6.height = 50;
+		platform6.x = platform0.x + 900;
+		platform6.y = platform0.y - 300;
+		platform6.color = "Lime";
+
+		platform8 = new GameObject;
+		platform8.width = 176;
+		platform8.height = 50
+		platform8.x = platform0.x + 950;
+		platform8.y = platform0.y - 600;
+		platform8.color = "Purple";
+
 	goal = new GameObject({width:24, height:50, x:canvas.width-50, y:100, color:"#00ffff"});
 	
 	player.x = platform0.x
@@ -149,6 +164,19 @@ function animate()
 		player.vy = 0;
 	}
 
+	while(platform6.hitTestPoint(player.bottom()) && player.vy >=0 && !s)
+	{
+		player.canJump = false;
+		player.y--;
+		player.vy = 0;
+	}
+	
+	while(platform8.hitTestPoint(player.bottom()) && player.vy >=0 && !s)
+	{
+		player.canJump = false;
+		player.y--;
+		player.vy = 0;
+	}
 
 	if(player.hitTestObject(goal))
 	{
@@ -164,6 +192,8 @@ function animate()
 	platform3.drawRect();
 	platform4.drawRect();
 	platform5.drawRect();
+	platform6.drawRect();
+	platform8.drawRect();
 	
 
 	//Show hit points

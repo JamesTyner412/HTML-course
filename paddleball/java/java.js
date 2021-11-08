@@ -10,7 +10,7 @@ var gravity = 1;
 var force;
 var score
 var p1S = 0
-
+var color
 
 
 canvas = document.getElementById("canvas");
@@ -22,12 +22,12 @@ timer = setInterval(animate, interval);
 paddle = new GameObject();
 paddle.x = canvas.width /2 
 paddle.y = 750
-paddle.width = 150
-paddle.height = 14
+paddle.width = 250
+paddle.height = 45
 
 ball = new GameObject();
-ball.width =50
-ball.height=50
+ball.width = 85
+ball.height= 85
 ball.vx = 0
 ball.vy = 1
 ball.force = 2;
@@ -70,6 +70,8 @@ function animate() {
 
     ball.x += ball.vx
     ball.y += ball.vy
+
+   
 
     //Bottom
     if(ball.y > canvas.height - ball.width/2)

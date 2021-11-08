@@ -21,7 +21,7 @@ function GameObject(x, y, w, h, color) {
 
 	//player's color
 	if (color == undefined)
-		this.color = "yellow";
+		this.color = "cyan";
 	else
 		this.color = color;
 	
@@ -57,14 +57,15 @@ function GameObject(x, y, w, h, color) {
 		context.closePath()
 		context.fill()
 		context.restore();
+		this.color = " Magenta"
 	}
 
 	this.drawScore = function()
 	{
 		context.save()
 		context.fillStyle = "black"
-		context.font = " 30px Times New Roman"
-		context.fillText("Player score:  " +p1S, 150, 50)
+		context.font = " 20px Arial"
+		context.fillText("Score: " +p1S, 75, 50)
 	}
 	//This changes the player's position
 	this.move = function () {

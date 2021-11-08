@@ -4,8 +4,8 @@ var interval
 var timer;
 var paddle;
 var ball;
-var frictionX = .97;
-var frictionY = .97;
+var frictionX = .99;
+var frictionY = .99;
 var gravity = 1;
 var force;
 var score
@@ -30,7 +30,7 @@ ball.width = 85
 ball.height= 85
 ball.vx = 0
 ball.vy = 1
-ball.force = 2;
+ball.force = 5;
 
 score = new GameObject()
 
@@ -116,21 +116,21 @@ function animate() {
         if (ball.x < paddle.x - paddle.width / 3)//one sixth of the paddle's height)
         {
 
-            ball.vx = -ball.force  //negative speed;
+            ball.vx = -ball.force *5  //negative speed;
         }
         if (ball.x > paddle.x + paddle.width / 3) {
 
-            ball.vx = ball.force  //positive speed;
+            ball.vx = ball.force *5 //positive speed;
         }
 
         if (ball.x < paddle.x - paddle.width / 6)//one sixth of the paddle's height)
         {
 
-            ball.vx = -ball.force *5 //negative speed;
+            ball.vx = -ball.force  //negative speed;
         }
         if (ball.x > paddle.x + paddle.width / 6) {
 
-            ball.vx = ball.force *5 //positive speed;
+            ball.vx = ball.force  //positive speed;
         }
         p1S++
     }

@@ -27,8 +27,8 @@ var player;
 		platform2 = new GameObject;
 		platform2.width = 175;
 		platform2.height = 50;
-		platform2.x = platform0.x + 500;
-		platform2.y = platform0.y - 300;
+		platform2.x = platform0.x + 450;
+		platform2.y = platform0.y - 200;
 		platform2.color = "magenta";
 
 		platform3 = new GameObject;
@@ -42,7 +42,8 @@ var player;
 		platform4.width = 3500;
 		platform4.height = 50
 		platform4.x = platform0.x + 200;
-		platform4.y = platform0.y - 800;
+		platform4.y = platform0.y - 400
+		;
 		platform4.color = "yellow";
 		
 		platform5 = new GameObject;
@@ -51,21 +52,35 @@ var player;
 		platform5.y = canvas.height - platform0.height/2;
 		platform5.color = "blue";
 
-
-
 		platform6 = new GameObject;
 		platform6.width = 175;
-		platform6.height = 50;
-		platform6.x = platform0.x + 900;
-		platform6.y = platform0.y - 300;
-		platform6.color = "Lime";
+		platform6.height = 50
+		platform6.x = platform0.x + 845;
+		platform6.y = platform0.y - 200;
+		platform6.color = "lime";
+
 
 		platform8 = new GameObject;
 		platform8.width = 176;
 		platform8.height = 50
-		platform8.x = platform0.x + 950;
-		platform8.y = platform0.y - 600;
+		platform8.x = platform0.x + 0 ;
+		platform8.y = platform0.y - 500;
 		platform8.color = "Purple";
+
+		platform9 = new GameObject;
+		platform9.width = 176;
+		platform9.height = 50
+		platform9.x = platform0.x + 1250;
+		platform9.y = platform0.y - 400;
+		platform9.color = "Indigo";
+
+
+		platform10 = new GameObject;
+		platform10.width = 50;
+		platform10.height = 50
+		platform10.x = platform0.x + 700;
+		platform10.y = platform0.y - 500;
+		platform10.color = "Gray";
 
 	goal = new GameObject({width:24, height:50, x:canvas.width-50, y:100, color:"#00ffff"});
 	
@@ -166,7 +181,14 @@ function animate()
 
 	while(platform6.hitTestPoint(player.bottom()) && player.vy >=0 && !s)
 	{
-		player.canJump = false;
+		player.canJump = true;
+		player.y--;
+		player.vy = 0;
+	}
+
+	while(platform5.hitTestPoint(player.bottom()) && player.vy >=0 && !s)
+	{
+		player.canJump = true;
 		player.y--;
 		player.vy = 0;
 	}
@@ -178,6 +200,20 @@ function animate()
 		player.vy = 0;
 	}
 
+	while(platform9.hitTestPoint(player.bottom()) && player.vy >=0 && !s)
+	{
+		player.canJump = false;
+		player.y--;
+		player.vy = 0;
+	}
+
+
+	while(platform10.hitTestPoint(player.bottom()) && player.vy >=0 && !s)
+	{
+		player.canJump = false;
+		player.y--;
+		player.vy = 0;
+	}
 	if(player.hitTestObject(goal))
 	{
 		goal.y = 10000;
@@ -194,6 +230,8 @@ function animate()
 	platform5.drawRect();
 	platform6.drawRect();
 	platform8.drawRect();
+	platform9.drawRect();
+	platform10.drawRect();
 	
 
 	//Show hit points

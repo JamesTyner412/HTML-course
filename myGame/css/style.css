@@ -1,3 +1,19 @@
+html,body{
+    display: flex;
+    justify-content: center;
+    background-color: silver;
+	background-position: center;
+    
+}
 canvas{
 	border:1px solid black;
+
+	
+}
+
+#container{
+    background-color: blueviolet;
+    border: 5px solid white;
+    box-sizing: border-box;
+    padding: 20px;
 }

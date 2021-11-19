@@ -11,10 +11,10 @@ function GameObject(obj)
 		this.ay = 1;
 		this.vx = 0;
 		this.vy = 0;
-		
 		//the angle that the graphic is drawn facing.
 		this.angle = 0;
 		
+	
 		
 		//------Allows us to pass object literals into the class to define its properties--------//
 		//------This eliminate the need to pass in the property arguments in a specific order------------//
@@ -30,7 +30,8 @@ function GameObject(obj)
 	
 	//whether or not the object can jump
 	this.canJump = false;
-	this.jumpHeight = -25;
+	this.jumpHeight = -30;
+	
 	
 
 	this.drawRect = function()
@@ -74,6 +75,14 @@ function GameObject(obj)
 		
 	}	
 	
+	this.drawScore = function()
+	{
+		context.save()
+		context.fillStyle = "black"
+		context.font = " 20px Arial"
+		context.fillText("Score: " +p1S, 20, 20)
+	}
+
 	this.move = function()
 	{
 		this.x += this.vx;

@@ -144,7 +144,7 @@ function animate() {
 	bluestart += blue.vx
 	beestart += bee.vx
 
-	//draw image
+//draw image
 	context.drawImage(star,starstart,0,canvas.width,canvas.height);
 	context.drawImage(blue,bluestart,0,canvas.width,canvas.height); //dont forget just in case at a number to streach if need
 	context.drawImage(bee,beestart,0,canvas.width,canvas.height);

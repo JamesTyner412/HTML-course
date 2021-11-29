@@ -1,3 +1,4 @@
+//var
 var canvas;
 var context;
 var timer;

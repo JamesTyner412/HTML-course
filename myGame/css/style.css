@@ -10,6 +10,9 @@ canvas{
 
 	
 }
+#star{display:none;}
+#blue{display:none;}
+#bee{display:none;}
 
 #container{
     background-color: blueviolet;

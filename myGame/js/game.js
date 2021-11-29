@@ -10,11 +10,15 @@ var gameStates = []
 var currentStates = 0
 var score = 0
 var highScore = 0
-
-
-
-
-
+var star = document.getElementById("star");
+var blue = document.getElementById("blue");
+var bee = document.getElementById("bee");
+var starvx = 10
+var bluevx = 10
+var beevx = 10
+var starstart = 0
+var bluestart = -1900
+var beestart = -3800
 //var jumpCount = 0
 //var jumpMax =2
 canvas = document.getElementById("canvas");
@@ -23,20 +27,6 @@ player = new GameObject({ x: 100, y: canvas.height / 2 - 100 });
 score = new GameObject()
 
 
-var star = new Image()
-star.src = "images/star.png"
-star.vx = 10
-var starstart = 0
-
-var blue = new Image()
-blue.src = "images/blue.png"
-blue.vx = 10
-var bluestart = -1900
-
-var bee = new Image()
-bee.src = "images/bee.png"
-bee.vx = 10
-var beestart = -3800
 
 
 platform0 = new GameObject();
@@ -140,9 +130,9 @@ function animate() {
 	
 	context.clearRect(0, 0, canvas.width, canvas.height);
 	//this moves the background image
-	starstart += star.vx
-	bluestart += blue.vx
-	beestart += bee.vx
+	starstart += starvx 
+	bluestart += bluevx
+	beestart += beevx
 
 //draw image
 	context.drawImage(star,starstart,0,canvas.width,canvas.height);

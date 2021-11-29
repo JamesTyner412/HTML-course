@@ -140,8 +140,6 @@ function animate() {
 
 }
 
-
-
 function pad(pad) {
     if (pad.y + pad.height > canvas.height + pad.height / 2) {
         pad.y = canvas.height - pad.height / 2

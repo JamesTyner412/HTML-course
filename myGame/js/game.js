@@ -24,17 +24,17 @@ score = new GameObject()
 
 
 var star = new Image()
-star.src = "images/star.jpg"
+star.src = "images/star.png"
 star.vx = 10
 var starstart = 0
 
 var blue = new Image()
-blue.src = "images/blue.jpg"
+blue.src = "images/blue.png"
 blue.vx = 10
 var bluestart = -1900
 
 var bee = new Image()
-bee.src = "images/bee.jpg"
+bee.src = "images/bee.png"
 bee.vx = 10
 var beestart = -3800
 

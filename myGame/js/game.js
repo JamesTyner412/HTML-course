@@ -1,4 +1,3 @@
-//var
 var canvas;
 var context;
 var timer;
@@ -119,6 +118,8 @@ var fY = .97;
 var gravity = 1;
 
 interval = 1000 / 60;
+window.addEventListener(`load`, ()=>{//var
+
 timer = setInterval(animate, interval);
 
 
@@ -302,3 +303,4 @@ function animate() {
 		jumpCount++
 	}
 }*/
+});

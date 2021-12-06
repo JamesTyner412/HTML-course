@@ -52,8 +52,8 @@ platform2.color = "magenta";
 platform3 = new GameObject;
 platform3.width = 175;
 platform3.height = 50;
-platform3.x = platform0.x + 1750;
-platform3.y = platform0.y - 600;
+platform3.x = platform0.x + 1650;
+platform3.y = platform0.y - 300;
 platform3.color = "green";
 
 platform4 = new GameObject;
@@ -201,7 +201,6 @@ function animate() {
 		player.vy = 0;
 	}
 
-
 	//---------Objective: Treasure!!!!!!!---------------------------------------------------------------------------------------------------- 
 	//---------Run this program first.
 	//---------Get Creative. Find a new way to get your player from the platform to the pearl. 
@@ -272,7 +271,10 @@ function animate() {
 		context.textAlign = "center";
 		context.drawText("You Win!!!", canvas.width / 2, canvas.height / 2);
 	}
-
+	if(platform3.hitTestPoint(player.bottom()))
+	{
+		  platform8.x = platform8.y
+	}
 
 	platform0.drawRect();
 	platform1.drawRect();

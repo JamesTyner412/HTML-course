@@ -1,0 +1,133 @@
+function GameObject(obj) {
+    this.x = canvas.width / 2;
+    this.y = canvas.height / 2;
+    this.width = 100;
+    this.height = 100;
+    this.color = "#ff0000";
+    this.force = 1;
+    this.ax = 1;
+    this.ay = 1;
+    this.vx = 0;
+    this.vy = 0;
+
+    //the angle that the graphic is drawn facing.
+    this.angle = 0;
+
+
+    //------Allows us to pass object literals into the class to define its properties--------//
+    //------This eliminate the need to pass in the property arguments in a specific order------------//
+    if (obj !== undefined) {
+        for (value in obj) {
+            if (this[value] !== undefined)
+                this[value] = obj[value];
+        }
+    }
+
+
+    //whether or not the object can jump
+    this.canJump = false;
+    this.jumpHeight = -25;
+
+
+    this.drawRect = function () {
+     context.save();
+     context.fillStyle = this.color;
+     context.translate(this.x, this.y);
+     context.fillRect((-this.width / 2), (-this.height / 2), this.width, this.height);
+     context.restore();
+
+    }
+	this.drawScore = function () {
+
+      context.font = "30px Arial"
+      context.fillStyle = "black"
+      context.weight = "bold"
+      context.fillText("Score:  " + score1, 50, 30)
+
+
+    }
+    this.drawCircle = function () {
+     context.save();
+     context.fillStyle = this.color;
+     context.beginPath();
+     context.translate(this.x, this.y);
+     context.arc(0, 0, this.radius(), 0, 360 * Math.PI / 180, true);
+     context.closePath();
+     context.fill();
+     context.restore();
+
+    }
+
+    //draws a triangle
+    this.drawTriangle = function () {
+     context.save();
+     context.fillStyle = this.color;
+     context.translate(this.x, this.y);
+        //To convert deg to rad multiply deg * Math.PI/180
+    context.rotate(this.angle * Math.PI / 180);
+    context.beginPath();
+    context.moveTo(0 + this.width / 2, 0);
+    context.lineTo(0 - this.width / 2, 0 - this.height / 4);
+    context.lineTo(0 - this.width / 2, 0 + this.height / 4);
+    context.closePath();
+    context.fill();
+    context.restore();
+
+    }
+
+    this.move = function () {
+        this.x += this.vx;
+        this.y += this.vy;
+    }
+
+	//---------Returns object's for the top, bottom, left and right of an object's bounding box.
+    this.left = function () {
+        return { x: this.x - this.width / 2, y: this.y }
+    }
+    this.right = function () {
+        return { x: this.x + this.width / 2, y: this.y }
+    }
+
+    this.top = function () {
+        return { x: this.x, y: this.y - this.height / 2 }
+    }
+    this.bottom = function () {
+        return { x: this.x, y: this.y + this.height / 2 }
+    }
+
+    this.hitTestObject = function (obj) {
+        if (this.left().x <= obj.right().x &&
+            this.right().x >= obj.left().x &&
+            this.top().y <= obj.bottom().y &&
+            this.bottom().y >= obj.top().y) {
+            return true
+        }
+        return false;
+    }
+
+	 //This draws the player to the screen
+	 this.drawCircle = function () {
+		context.save();
+		context.beginPath()
+		context.fillStyle = this.color
+		context.arc(this.x, this.y, this.width / 2, 0, 2 * Math.PI)
+		context.closePath()
+		context.fill()
+		context.restore();
+	
+	 }
+
+    //------Tests whether a single point overlaps the bounding box of another object-------
+    this.hitTestPoint = function (obj) {
+        if (obj.x >= this.left().x &&
+            obj.x <= this.right().x &&
+            obj.y >= this.top().y &&
+            obj.y <= this.bottom().y) {
+            return true;
+        }
+        return false;
+    }
+
+
+
+}

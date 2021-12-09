@@ -273,7 +273,7 @@ function animate() {
 	}
 	if(platform3.hitTestPoint(player.bottom()))
 	{
-		  platform8.x = platform8.y
+		 platform8.x = platform8.y
 	}
 
 	platform0.drawRect();

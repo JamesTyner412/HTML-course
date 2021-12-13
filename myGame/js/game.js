@@ -178,8 +178,8 @@ gameState[0] = function()
     context.fillRect(0, 0, canvas.width, canvas.height)
     context.fillStyle = "black"
     context.textAlign = "center"
-    context.font = "30px Arial"
-    context.fillText("Untitled HTML Game", canvas.width / 2, canvas.height / 2 - 30)
+    context.font = "45px Arial"
+    context.fillText("Cube Rider", canvas.width / 2, canvas.height / 2 - 30)
     context.font = "15px Arial"
     context.fillText("(Press Spacebar To Start)", canvas.width / 2, canvas.height / 2 + 15)
    keyPress()
@@ -199,7 +199,7 @@ gameState[1] = function()
     context.font = "30px Arial"
     context.fillText("INSTRUCTIONS", canvas.width / 2, canvas.height / 2 - 30)
     context.font = "30px Arial"
-    context.fillText("(Press W,A,S,D to move Up W, Left,A, Right,D  Down,S push c to start.)", canvas.width / 2, canvas.height / 2 + 15)
+    context.fillText("(Press W,A,S,D to move Up W, Left,A Right,D Down,S Push C to start.)", canvas.width / 2, canvas.height / 2 + 15)
    
 	if(KeyC)
 	{
@@ -466,7 +466,7 @@ gameState[3] = function()
 	context.clearRect(0,0,canvas.width,canvas.height)
 	//drawImage
 	//context.drawImage(imagename,0,0, canvas.width,canvas.height)
-	context.fillStyle = "blue"
+	context.fillStyle = "red"
     context.fillRect(0, 0, canvas.width, canvas.height)
     context.fillStyle = "white"
     context.textAlign = "center"
@@ -486,9 +486,9 @@ gameState[4] = function()
     context.fillRect(0, 0, canvas.width, canvas.height)
     context.fillStyle = "black"
     context.textAlign = "center"
+    context.font = "45px Arial"
+    context.fillText("Congratulations!!!!", canvas.width / 2, canvas.height / 2 - 30)
     context.font = "30px Arial"
-    context.fillText("Untitled HTML Game", canvas.width / 2, canvas.height / 2 - 30)
-    context.font = "15px Arial"
     context.fillText("(You Win)", canvas.width / 2, canvas.height / 2 + 15)
    
 }

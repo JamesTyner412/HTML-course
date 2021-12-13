@@ -41,7 +41,7 @@ for (var i = 0; i < camount; i++) {
     circle[i].color = colors[Math.floor(rand(0, 2.9))]
 }
 
-//__________Square Particles____________________
+//Square Particles____________________
 var amount = 5;
 var particles = []; // Particles are the backround boxes
 var pcolors = []
@@ -49,7 +49,7 @@ pcolors [0] = " lime"
 pcolors [1] = " purple"
 pcolors [2] = " magenta"
 
-//__________Square array____________________
+//__________Square array
 for (var i = 0; i < amount; i++) {
     particles[i] = new GameObject({ width: 30, height: 30});
     var randomcolor = Math.round(Math.random());

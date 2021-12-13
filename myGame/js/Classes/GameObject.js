@@ -78,9 +78,9 @@ function GameObject(obj)
 	this.drawScore = function()
 	{
 		context.save()
-		context.fillStyle = "black"
-		context.font = " 20px Arial"
-		context.fillText("Score: " +p1S, 20, 20)
+		context.fillStyle = "white"
+		context.font = " 30px Arial"
+		context.fillText("Lives: " +bosshealth, 75, 850)
 	}
 
 	this.move = function()
